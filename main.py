@@ -3,6 +3,7 @@ from random import randint, choice
 import os
 import json
 from time import sleep
+from secrets import *
 
 
 def clear_folder(folder_path):
@@ -20,11 +21,9 @@ def create_datatype(url, text):
   return gdagda
 
 
-telega = "7346918908:AAHC_1g7ruMPWtAYC0iSywHbP6nOz_4ZVT8"
 cat_url = "https://api.thecatapi.com/v1/images/search"
 joke_url = "http://shortiki.com/export/api.php"
 clear_folder(folder_path = 'images')
-canal_id = -1002013420208
 
 
 parameters = {
