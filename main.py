@@ -57,7 +57,7 @@ while True:
     list_datatype = json.dumps(list_datatype)
 
 
-    url = f'https://api.telegram.org/bot{telega}/sendMediaGroup'
+    url = f'https://api.telegram.org/bot{telegram}/sendMediaGroup'
     Params = {"chat_id":canal_id, "media":list_datatype}
     response = requests.post(url, Params)
     print(response.json())
