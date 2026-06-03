@@ -13,12 +13,12 @@ def clear_folder(folder_path):
 
 
 def create_datatype(url, text):
-  gdagda = {
+  datatype = {
     "caption": text,
     "type": 'photo',
     "media": url
   }
-  return gdagda
+  return datatype
 
 
 cat_url = "https://api.thecatapi.com/v1/images/search"
@@ -48,17 +48,17 @@ while True:
         #     file.write(response2.content)
 
 
-    gdagdochka = []
+    list_datatype = []
     for i in range(1, esli + 1):
         response = requests.get(cat_url)
-        gidageduniya = create_datatype(response.json()[0]["url"], random_joke)
-        gdagdochka.append(gidageduniya)
+        datatype = create_datatype(response.json()[0]["url"], random_joke)
+        list_datatype.append(datatype)
 
-    gdagdochka = json.dumps(gdagdochka)
+    list_datatype = json.dumps(list_datatype)
 
 
     url = f'https://api.telegram.org/bot{telega}/sendMediaGroup'
-    Params = {"chat_id":canal_id, "media":gdagdochka}
+    Params = {"chat_id":canal_id, "media":list_datatype}
     response = requests.post(url, Params)
     print(response.json())
     sleep(20)
